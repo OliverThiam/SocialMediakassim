@@ -1,0 +1,222 @@
+/** @format */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.family {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.transition-in {
+  animation: smooth-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.transition-out {
+  animation: smooth-out;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes smooth-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes smooth-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.schatten {
+  box-shadow: 9px 9px 10px gray;
+}
+
+.links {
+  transition: 0.2s;
+  font-weight: bold;
+}
+
+.links:hover {
+  color: #607980;
+}
+.item {
+  max-height: 35rem;
+  min-width: 24rem;
+}
+
+.inner-carusel {
+  display: flex;
+  padding: 35px;
+}
+
+.carusel {
+  cursor: grab;
+  overflow: hidden;
+}
+
+.menu-fadeIn {
+  animation: fadeIn 0.5s both;
+}
+
+.menu-fadeOut {
+  animation: fadeOut 0.5s both;
+}
+
+.menu-slide-right-left-open {
+  animation: slide-right-left-open 0.5s both;
+}
+
+.menu-slide-left-right-close {
+  animation: slide-left-right-close 0.5s both;
+}
+
+.blur-animation-in {
+  animation: blureIn 0.5s both;
+}
+
+.blur-animation-out {
+  animation: blureOut 0.5s both;
+}
+
+@keyframes blureOut {
+  0% {
+    filter: blur(6px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+@keyframes blureIn {
+  0% {
+    filter: blur(0px);
+  }
+  100% {
+    filter: blur(6px);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* Ab hier ist der code für den Pfeil */
+.pfeil {
+  margin-left: 2px;
+  top: 13.5px;
+  left: 53px;
+  transform :rotateZ(25deg) 
+}
+
+.Ziel{
+  animation: 0.3s   slideInFromRigth;
+
+}
+
+@keyframes slideInFromRigth {
+  0% {
+    transform: translateX(10%)
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translate(-100%, -50%) rotateZ(0deg);
+  }
+  75% {
+    transform: translate(0)  rotateZ(25deg);
+  }
+  80%{
+    transform: translateX(0px) rotateZ(25deg);
+  }
+  85%{
+    transform: translateX(-5px) rotateZ(25deg)
+  }
+  90%{
+    transform: translateX(5px) rotateZ(25deg);
+  }
+  95%{
+    transform: translateX(-5px) rotateZ(25deg);
+  }
+  100%{
+    transform: translateX(0) rotateZ(25deg);
+  }
+}
+
+@keyframes horizontal-shaking {
+  0% { transform: translateX(0) }
+  25% { transform: translateX(5px) }
+  50% { transform: translateX(-5px) }
+  75% { transform: translateX(5px) }
+  100% { transform: translateX(0) }
+ }
+
+/* @keyframes rotateArrow {
+  0% {
+    transform: rotateZ(-45deg);
+  }
+  100% {
+    transform: rotateZ(45deg);
+  }
+} */
+
+.pfeilani {
+  animation: 0.2s   slideInFromLeft;
+
+
+}
+
+/* .container{
+  animation-name: horizontal-shaking;
+  animation-delay: 0.55s;
+  animation-duration: 0.1s;
+} */
