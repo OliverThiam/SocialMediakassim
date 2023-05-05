@@ -1,12 +1,13 @@
-import React from 'react'
-import Bild1 from "../assets/landingPage.jpg"
-import Logo from "../assets/logor.png"
-import {useState,useEffect,useRef} from 'react'
-import '../styles/navIcon.css'
+/** @format */
+
+import React from "react";
+import Bild1 from "../assets/landingPage.jpg";
+import Logo from "../assets/logor.png";
+import { useState, useEffect, useRef } from "react";
+import "../styles/navIcon.css";
 
 const Navabar = () => {
-
-  const [toggle, setToggle] = React.useState(false)
+  const [toggle, setToggle] = React.useState(false);
 
   const [hidden, setHidden] = React.useState(true);
 
@@ -17,44 +18,74 @@ const Navabar = () => {
     setToggle((prev) => !prev);
   };
 
+  const navbarRef = useRef(null);
+  const [navbarHeight, setNavbarHeight] = useState(0);
 
-  
-    const navbarRef = useRef(null);
-    const [navbarHeight, setNavbarHeight] = useState(0);
-  
-    useEffect(() => {
-      const height = navbarRef.current.offsetHeight;
-      setNavbarHeight(height);
-    }, [navbarRef]); 
+  useEffect(() => {
+    const height = navbarRef.current.offsetHeight;
+    setNavbarHeight(height);
+  }, [navbarRef]);
 
-    console.log(navbarHeight)
+  console.log(navbarHeight);
 
   return (
-    <nav ref={navbarRef} className={`fixed px-10 w-full family text-paragraph`} style={{zIndex:70, backgroundImage:`url(${Bild1})`}}>
-
-        <div>
-          {/* Hier sitzt der Code für das Logo */}
-          <div className='flex flex-row items-center '>
-            {/* Pfeil */}
-            <div className='  absolute items-center pfeil pfeilani'>  
-                <svg  fill="#000000" height="70px" width="70px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
-                viewBox="0 0 1792 1792" xmlSpace="preserve">
-                <path d="M1792,897l-431,198.5l84.5-157.5H462.9l-99.3,123.6H0l133.2-165L0,730.4h363.6l99.3,125.6h982.3l-84.5-159.5L1792,897z"/>
-              </svg>
-            </div>
-            {/* //Logo mit Text */}
-           <div className='ml-5 Ziel'>
-              <svg width="293" height="139" viewBox="0 0 293 139" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="60" cy="62" r="32" stroke="black" strokeWidth="4"/>
-                <circle cx="60.5" cy="62.5" r="19.5" stroke="black" strokeWidth="4"/>
-                <circle cx="60.5" cy="62.5" r="8" stroke="black" strokeWidth="3"/>
-                <circle cx="60.5" cy="62.5" r="2.5" fill="black"/>
-              </svg>
-           </div>
-          {/* Bis hier geht der Code von dem Logo */}
+    <nav
+      ref={navbarRef}
+      className={`fixed px-10 w-full family text-paragraph`}
+      style={{ zIndex: 70, backgroundImage: `url(${Bild1})` }}
+    >
+      <div>
+        {/* Hier sitzt der Code für das Logo */}
+        <div className="flex flex-row items-center ">
+          {/* Pfeil */}
+          <div className="  absolute items-center pfeil pfeilani">
+            <svg
+              fill="#ffffff"
+              height="800px"
+              width="800px"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 1792 1792"
+              xml:space="preserve"
+            >
+              <path
+                d="M1792,897l-431,198.5l84.5-157.5H462.9l-99.3,123.6H0l133.2-165L0,730.4h363.6l99.3,125.6h982.3l-84.5-159.5L1792,897z"
+                fill="#ffffff"
+              />
+            </svg>
           </div>
-        
+          {/* //Logo mit Text */}
+          <div className="ml-5 Ziel">
+            <svg
+              width="293"
+              height="139"
+              viewBox="0 0 293 139"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="60" cy="62" r="32" stroke="black" strokeWidth="4" />
+              <circle
+                cx="60.5"
+                cy="62.5"
+                r="19.5"
+                stroke="black"
+                strokeWidth="4"
+              />
+              <circle
+                cx="60.5"
+                cy="62.5"
+                r="8"
+                stroke="black"
+                strokeWidth="3"
+              />
+              <circle cx="60.5" cy="62.5" r="2.5" fill="black" />
+            </svg>
+          </div>
+          {/* Bis hier geht der Code von dem Logo */}
         </div>
+      </div>
 
       <div
         style={{ zIndex: 60 }}
@@ -111,9 +142,7 @@ const Navabar = () => {
         </ul>
       </div>
     </nav>
-    
-  )
-}
+  );
+};
 
-
-export default Navabar
+export default Navabar;
