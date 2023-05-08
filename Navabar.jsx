@@ -41,8 +41,8 @@ const Navabar = () => {
           <div className="  absolute items-center pfeil pfeilani">
             <svg
               fill="#ffffff"
-              height="800px"
-              width="800px"
+              height="70px"
+              width="70px"
               version="1.1"
               id="Layer_1"
               xmlns="http://www.w3.org/2000/svg"
